@@ -4,7 +4,7 @@ Console.WriteLine("Si desea imprimir un carton de bingo presione 1");
 
 int eleccion = Convert.ToInt32(Console.ReadLine());
 
-int[] carton = new int[27];
+int[] carton = new int[26];
 
 
 if (eleccion == 1)
@@ -13,7 +13,7 @@ if (eleccion == 1)
     for (int i = 0; i < 27; i++)
     {
        if (i == 0)
-        {                                           // Primera linea
+        {                                           // Primera fila
             Random num = new Random();
             carton[i] = num.Next(1,3);
         }
@@ -47,7 +47,7 @@ if (eleccion == 1)
         } 
         else if (i == 8)   {
             Random num = new Random();
-            carton[i] = num.Next(80, 84);               // Segunda linea
+            carton[i] = num.Next(80, 84);               // Segunda fila
         } 
         else if (i == 9)
         {
@@ -92,7 +92,7 @@ if (eleccion == 1)
         else if (i == 17)
         {
             Random num = new Random();
-            carton[i] = num.Next(85, 87);              // tercera linea
+            carton[i] = num.Next(85, 87);              // Tercera fila
         } 
         else if (i == 18)
         {
@@ -133,7 +133,7 @@ if (eleccion == 1)
         {
             Random num = new Random();
             carton[i] = num.Next(77, 79);
-        }  
+        }
         else if (i == 26)
         {
             Random num = new Random();
@@ -145,9 +145,19 @@ if (eleccion == 1)
 
 
 }
+// Borro al azar 4 casillas por fila
+
+//for (int i = 0; i < 4; i++)
+//    {
+//        Random fila = new Random();
+//        int indice = fila.Next(0, 8);
+//        carton[indice] = 0;
+//    }
 
 
-for (int i = 0; i < 8; i++)
+// Imprimo el Carton
+
+for (int i = 0; i < 9; i++)
 {
     Console.Write(carton[i]);
     Console.Write(" | ");
@@ -155,7 +165,7 @@ for (int i = 0; i < 8; i++)
 
 Console.WriteLine();
 
-for (int i = 9; i < 17; i++)
+for (int i = 9; i < 18; i++)
 {
     Console.Write(carton[i]);
     Console.Write(" | ");
@@ -163,7 +173,7 @@ for (int i = 9; i < 17; i++)
 
 Console.WriteLine();
 
-for (int i = 18; i < 26; i++)
+for (int i = 18; i < 27; i++)
 {
     Console.Write(carton[i]);
     Console.Write(" | ");
