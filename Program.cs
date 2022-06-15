@@ -1,16 +1,13 @@
 ﻿// Bingo
 
-Console.WriteLine("Si desea imprimir un carton de bingo presione 1");
-
-int eleccion = Convert.ToInt32(Console.ReadLine());
-
-int[] carton = new int[26];
+Console.WriteLine("Su carton de bingo es el siguiente :");
 
 
-if (eleccion == 1)
-{
 
-    for (int i = 0; i < 27; i++)
+int[] carton = new int[27];
+
+
+  for (int i = 0; i < 27; i++)
     {
        if (i == 0)
         {                                           // Primera fila
@@ -140,26 +137,44 @@ if (eleccion == 1)
             carton[i] = num.Next(88, 90);
         }
 
-
     }
 
 
-}
 // Borro al azar 4 casillas por fila
 
-//for (int i = 0; i < 4; i++)
-//    {
-//        Random fila = new Random();
-//        int indice = fila.Next(0, 8);
-//        carton[indice] = 0;
-//    }
+for (int i = 0; i < 4; i++)
+    {
+       Random fila = new Random();
+       int indice = fila.Next(0, 8);
+       carton[indice] = 0;
+    }
+
+for (int i = 0; i < 4; i++)
+{
+    Random fila = new Random();
+    int indice = fila.Next(9, 17);
+    carton[indice] = 0;
+}
+
+for (int i = 0; i < 4; i++)
+{
+    Random fila = new Random();
+    int indice = fila.Next(18, 26);
+    carton[indice] = 0;
+}
 
 
 // Imprimo el Carton
 
 for (int i = 0; i < 9; i++)
 {
-    Console.Write(carton[i]);
+    if (carton[i] == 0)
+    {
+        Console.Write(" - ");
+    } else
+    {
+        Console.Write(carton[i]);
+    }
     Console.Write(" | ");
 }
 
@@ -167,7 +182,14 @@ Console.WriteLine();
 
 for (int i = 9; i < 18; i++)
 {
-    Console.Write(carton[i]);
+    if (carton[i] == 0)
+    {
+        Console.Write(" - ");
+    }
+    else
+    {
+        Console.Write(carton[i]);
+    }
     Console.Write(" | ");
 }
 
@@ -175,6 +197,13 @@ Console.WriteLine();
 
 for (int i = 18; i < 27; i++)
 {
-    Console.Write(carton[i]);
+    if (carton[i] == 0)
+    {
+        Console.Write(" - ");
+    }
+    else
+    {
+        Console.Write(carton[i]);
+    }
     Console.Write(" | ");
 }
